@@ -1,0 +1,38 @@
+{
+  "check": "model",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.3",
+    "packages": {
+      "skypilot": "1.0.0.dev0",
+      "pulp": "3.3.0",
+      "networkx": "3.7"
+    }
+  },
+  "plan": [
+    {
+      "job_id": "flexible",
+      "offering_id": "B/west/small",
+      "cost_usd": "1.00"
+    },
+    {
+      "job_id": "pinned",
+      "offering_id": "A/east/small",
+      "cost_usd": "0.70"
+    }
+  ],
+  "cost_usd": "1.70",
+  "rejected_errors": [
+    "cpu",
+    "region",
+    "deadline",
+    "capacity",
+    "cost",
+    "job_coverage",
+    "unknown_offering",
+    "unassigned"
+  ],
+  "zero_capacity": "infeasible",
+  "status": "passed"
+}

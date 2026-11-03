@@ -1,0 +1,48 @@
+{
+  "check": "dp",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.3",
+    "packages": {
+      "skypilot": "1.0.0.dev0",
+      "pulp": "3.3.0",
+      "networkx": "3.7"
+    }
+  },
+  "source_commit": "fff7b16adc0cad0626afbbcfa469d4704978d4e8",
+  "optimizer_sha256": "0496b48319128fd29414cacfb641c3cde101c1f702b7271356ad52ced977d77c",
+  "author_methods": {
+    "_optimize_by_dp": 429
+  },
+  "cases": [
+    {
+      "case": "cheapest",
+      "status": "passed",
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "author_objective": 0.7,
+      "validator_errors": []
+    },
+    {
+      "case": "region_filter",
+      "status": "passed",
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        }
+      ],
+      "author_objective": 1.0,
+      "validator_errors": []
+    }
+  ],
+  "scope": "Extracted author DP; synthetic candidates and zero transfer cost",
+  "status": "passed"
+}

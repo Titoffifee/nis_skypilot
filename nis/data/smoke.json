@@ -1,0 +1,10 @@
+{
+  "offerings": [
+    {"id": "A/east/small", "provider": "A", "region": "east", "instance_type": "small", "cpus": 4, "price_usd_h": "0.70", "capacity": 1},
+    {"id": "B/west/small", "provider": "B", "region": "west", "instance_type": "small", "cpus": 4, "price_usd_h": "1.00", "capacity": 1}
+  ],
+  "jobs": [
+    {"id": "flexible", "required_cpus": 4, "duration_h": "1", "deadline_h": "1", "allowed_locations": [["A", "east"], ["B", "west"]]},
+    {"id": "pinned", "required_cpus": 4, "duration_h": "1", "deadline_h": "2", "allowed_locations": [["A", "east"]]}
+  ]
+}

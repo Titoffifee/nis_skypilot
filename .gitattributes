@@ -1,0 +1,2 @@
+# A single space marks an empty context line in a unified diff.
+src/skypilot_bench/patches/*.patch whitespace=-blank-at-eol

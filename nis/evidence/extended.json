@@ -1,0 +1,44 @@
+{
+  "check": "extended",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.3",
+    "packages": {
+      "skypilot": "1.0.0.dev0",
+      "pulp": "3.3.0",
+      "networkx": "3.7"
+    }
+  },
+  "source_commit": "fff7b16adc0cad0626afbbcfa469d4704978d4e8",
+  "optimizer_sha256": "0496b48319128fd29414cacfb641c3cde101c1f702b7271356ad52ced977d77c",
+  "author_methods": {
+    "_optimize_by_dp": 429,
+    "_compute_total_time": 640,
+    "_compute_total_cost": 674
+  },
+  "scope": "Extracted author DP and cost/time calculations; synthetic transfers",
+  "randomized": {
+    "seeds": "0..99",
+    "chains": 100,
+    "optimization_checks": 200,
+    "total_cost_checks": 200,
+    "total_time_checks": 200
+  },
+  "transfer_tradeoff": {
+    "status": "passed",
+    "chosen": [
+      "B",
+      "B"
+    ],
+    "cost": 3.0,
+    "local_compute_first_choice": "A"
+  },
+  "parallel_dag": {
+    "status": "passed",
+    "runtime_s": 18000,
+    "cost": 7.0,
+    "multinode_cost": 9.0
+  },
+  "status": "passed"
+}

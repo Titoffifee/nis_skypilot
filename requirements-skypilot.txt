@@ -1,0 +1,4 @@
+-e .
+-e ./nis/skypilot
+PuLP==3.3.0
+networkx==3.7
