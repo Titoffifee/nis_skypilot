@@ -1,0 +1,45 @@
+{
+  "check": "profile",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.3",
+    "packages": {
+      "skypilot": "1.0.0.dev0",
+      "pulp": "3.3.0",
+      "networkx": "3.7"
+    }
+  },
+  "runs": [
+    {
+      "repeat": 0,
+      "wall_seconds": 1.3460322079918114,
+      "max_rss_kib": 166528.0,
+      "check_status": "passed",
+      "case_count": 6
+    },
+    {
+      "repeat": 1,
+      "wall_seconds": 1.351979917002609,
+      "max_rss_kib": 166944.0,
+      "check_status": "passed",
+      "case_count": 6
+    },
+    {
+      "repeat": 2,
+      "wall_seconds": 1.3839165000099456,
+      "max_rss_kib": 167856.0,
+      "check_status": "passed",
+      "case_count": 6
+    }
+  ],
+  "summary": {
+    "median_wall_seconds": 1.351979917002609,
+    "min_wall_seconds": 1.3460322079918114,
+    "max_wall_seconds": 1.3839165000099456,
+    "max_rss_kib": 167856.0
+  },
+  "scope": "Import and six original ILP cases in each process",
+  "memory_scope": "Peak RSS reported by time, normalized to KiB; not aggregate process-tree memory",
+  "status": "passed"
+}

@@ -1,0 +1,489 @@
+{
+  "check": "capacity-ilp",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.3",
+    "packages": {
+      "skypilot": "1.0.0.dev0",
+      "pulp": "3.3.0",
+      "networkx": "3.7"
+    }
+  },
+  "source_commit": "fff7b16adc0cad0626afbbcfa469d4704978d4e8",
+  "optimizer_sha256": "0496b48319128fd29414cacfb641c3cde101c1f702b7271356ad52ced977d77c",
+  "patch_sha256": "d9b9f4c69b7903884490222abc54670f4a22efeb3a2d70dd2ae62affa6bdc7b0",
+  "patched_optimizer_sha256": "021108edbbc558ec5e22661e2623e8fc29e0d8e8c1922d6ff52245fba1c65878",
+  "cases": [
+    {
+      "case": "capacity_gap",
+      "status": "optimal",
+      "placed": 2,
+      "total_jobs": 2,
+      "placement_rate": 1.0,
+      "complete": true,
+      "cost_usd": "1.70",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 2,
+        "total_jobs": 2,
+        "placement_rate": 1.0,
+        "complete": true,
+        "cost_usd": "1.70"
+      },
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "wall_seconds": 0.04034462501294911
+    },
+    {
+      "case": "enough_capacity",
+      "status": "optimal",
+      "placed": 2,
+      "total_jobs": 2,
+      "placement_rate": 1.0,
+      "complete": true,
+      "cost_usd": "1.40",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 2,
+        "total_jobs": 2,
+        "placement_rate": 1.0,
+        "complete": true,
+        "cost_usd": "1.40"
+      },
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        },
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "wall_seconds": 0.035911792001570575
+    },
+    {
+      "case": "region_split",
+      "status": "optimal",
+      "placed": 2,
+      "total_jobs": 2,
+      "placement_rate": 1.0,
+      "complete": true,
+      "cost_usd": "1.70",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 2,
+        "total_jobs": 2,
+        "placement_rate": 1.0,
+        "complete": true,
+        "cost_usd": "1.70"
+      },
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "wall_seconds": 0.03563037500134669
+    },
+    {
+      "case": "six_jobs_cost",
+      "status": "optimal",
+      "placed": 6,
+      "total_jobs": 6,
+      "placement_rate": 1.0,
+      "complete": true,
+      "cost_usd": "9.90",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 6,
+        "total_jobs": 6,
+        "placement_rate": 1.0,
+        "complete": true,
+        "cost_usd": "9.90"
+      },
+      "plan": [
+        {
+          "job_id": "flexible_short",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned_a",
+          "offering_id": "A/east/small",
+          "cost_usd": "1.40"
+        },
+        {
+          "job_id": "pinned_a_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        },
+        {
+          "job_id": "pinned_b",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned_b_large",
+          "offering_id": "B/west/large",
+          "cost_usd": "3.20"
+        },
+        {
+          "job_id": "flexible_long",
+          "offering_id": "A/east/small",
+          "cost_usd": "2.10"
+        }
+      ],
+      "wall_seconds": 0.04015324999636505
+    },
+    {
+      "case": "six_jobs_greedy_blocked",
+      "status": "optimal",
+      "placed": 6,
+      "total_jobs": 6,
+      "placement_rate": 1.0,
+      "complete": true,
+      "cost_usd": "9.90",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 6,
+        "total_jobs": 6,
+        "placement_rate": 1.0,
+        "complete": true,
+        "cost_usd": "9.90"
+      },
+      "plan": [
+        {
+          "job_id": "flexible_short",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "flexible_long",
+          "offering_id": "A/east/small",
+          "cost_usd": "2.10"
+        },
+        {
+          "job_id": "pinned_a",
+          "offering_id": "A/east/small",
+          "cost_usd": "1.40"
+        },
+        {
+          "job_id": "pinned_a_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        },
+        {
+          "job_id": "pinned_b",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned_b_large",
+          "offering_id": "B/west/large",
+          "cost_usd": "3.20"
+        }
+      ],
+      "wall_seconds": 0.03909412500797771
+    },
+    {
+      "case": "seven_jobs_cpu_bottleneck",
+      "status": "optimal",
+      "placed": 6,
+      "total_jobs": 7,
+      "placement_rate": 0.8571428571428571,
+      "complete": false,
+      "cost_usd": "8.00",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 6,
+        "total_jobs": 7,
+        "placement_rate": 0.8571428571428571,
+        "complete": false,
+        "cost_usd": "8.00"
+      },
+      "plan": [
+        {
+          "job_id": "flexible_short",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        },
+        {
+          "job_id": "pinned_a",
+          "offering_id": "A/east/small",
+          "cost_usd": "1.40"
+        },
+        {
+          "job_id": "pinned_a_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        },
+        {
+          "job_id": "pinned_b",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "flexible_long",
+          "offering_id": "A/east/small",
+          "cost_usd": "2.10"
+        },
+        {
+          "job_id": "flexible_large",
+          "offering_id": "B/west/large",
+          "cost_usd": "1.60"
+        }
+      ],
+      "wall_seconds": 0.03935120800451841
+    },
+    {
+      "case": "seven_jobs_extra_large_machine",
+      "status": "optimal",
+      "placed": 7,
+      "total_jobs": 7,
+      "placement_rate": 1.0,
+      "complete": true,
+      "cost_usd": "10.80",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 7,
+        "total_jobs": 7,
+        "placement_rate": 1.0,
+        "complete": true,
+        "cost_usd": "10.80"
+      },
+      "plan": [
+        {
+          "job_id": "flexible_short",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        },
+        {
+          "job_id": "pinned_a",
+          "offering_id": "A/east/small",
+          "cost_usd": "1.40"
+        },
+        {
+          "job_id": "pinned_a_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        },
+        {
+          "job_id": "pinned_b",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned_b_large",
+          "offering_id": "B/west/large",
+          "cost_usd": "3.20"
+        },
+        {
+          "job_id": "flexible_long",
+          "offering_id": "A/east/small",
+          "cost_usd": "2.10"
+        },
+        {
+          "job_id": "flexible_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        }
+      ],
+      "wall_seconds": 0.03923329200188164
+    },
+    {
+      "case": "zero_capacity",
+      "status": "optimal",
+      "placed": 0,
+      "total_jobs": 2,
+      "placement_rate": 0.0,
+      "complete": false,
+      "cost_usd": "0",
+      "solver_calls": 1,
+      "oracle": {
+        "placed": 0,
+        "total_jobs": 2,
+        "placement_rate": 0.0,
+        "complete": false,
+        "cost_usd": "0"
+      },
+      "plan": [],
+      "wall_seconds": 0.01723124999261927
+    },
+    {
+      "case": "no_candidate",
+      "status": "optimal",
+      "placed": 1,
+      "total_jobs": 2,
+      "placement_rate": 0.5,
+      "complete": false,
+      "cost_usd": "0.70",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 1,
+        "total_jobs": 2,
+        "placement_rate": 0.5,
+        "complete": false,
+        "cost_usd": "0.70"
+      },
+      "plan": [
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "wall_seconds": 0.034420208001392893
+    },
+    {
+      "case": "impossible_deadline",
+      "status": "optimal",
+      "placed": 1,
+      "total_jobs": 2,
+      "placement_rate": 0.5,
+      "complete": false,
+      "cost_usd": "0.70",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 1,
+        "total_jobs": 2,
+        "placement_rate": 0.5,
+        "complete": false,
+        "cost_usd": "0.70"
+      },
+      "plan": [
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "wall_seconds": 0.035292125001433305
+    },
+    {
+      "case": "zero_cost",
+      "status": "optimal",
+      "placed": 2,
+      "total_jobs": 2,
+      "placement_rate": 1.0,
+      "complete": true,
+      "cost_usd": "0",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 2,
+        "total_jobs": 2,
+        "placement_rate": 1.0,
+        "complete": true,
+        "cost_usd": "0"
+      },
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "B/west/small",
+          "cost_usd": "0"
+        },
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0"
+        }
+      ],
+      "wall_seconds": 0.033822582990978844
+    },
+    {
+      "case": "colliding_names",
+      "status": "optimal",
+      "placed": 2,
+      "total_jobs": 2,
+      "placement_rate": 1.0,
+      "complete": true,
+      "cost_usd": "1.70",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 2,
+        "total_jobs": 2,
+        "placement_rate": 1.0,
+        "complete": true,
+        "cost_usd": "1.70"
+      },
+      "plan": [
+        {
+          "job_id": "job-a",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "job_a",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "wall_seconds": 0.033641874993918464
+    },
+    {
+      "case": "count_before_cost",
+      "status": "optimal",
+      "placed": 1,
+      "total_jobs": 2,
+      "placement_rate": 0.5,
+      "complete": false,
+      "cost_usd": "1000000",
+      "solver_calls": 2,
+      "oracle": {
+        "placed": 1,
+        "total_jobs": 2,
+        "placement_rate": 0.5,
+        "complete": false,
+        "cost_usd": "1000000"
+      },
+      "plan": [
+        {
+          "job_id": "pinned",
+          "offering_id": "B/west/small",
+          "cost_usd": "1000000"
+        }
+      ],
+      "wall_seconds": 0.03209845899255015
+    },
+    {
+      "case": "empty_input",
+      "status": "optimal",
+      "placed": 0,
+      "total_jobs": 0,
+      "placement_rate": null,
+      "complete": true,
+      "cost_usd": "0",
+      "solver_calls": 1,
+      "oracle": {
+        "placed": 0,
+        "total_jobs": 0,
+        "placement_rate": null,
+        "complete": true,
+        "cost_usd": "0"
+      },
+      "plan": [],
+      "wall_seconds": 0.01417579200642649
+    }
+  ],
+  "scope": "Maximize placed tasks, then minimize cost; checked by enumeration",
+  "status": "passed"
+}

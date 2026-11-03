@@ -1,0 +1,203 @@
+{
+  "check": "original-ilp",
+  "environment": {
+    "os": "Darwin",
+    "architecture": "arm64",
+    "python": "3.12.3",
+    "packages": {
+      "skypilot": "1.0.0.dev0",
+      "pulp": "3.3.0",
+      "networkx": "3.7"
+    }
+  },
+  "source_commit": "fff7b16adc0cad0626afbbcfa469d4704978d4e8",
+  "optimizer_sha256": "0496b48319128fd29414cacfb641c3cde101c1f702b7271356ad52ced977d77c",
+  "cases": [
+    {
+      "case": "capacity_gap",
+      "cost_usd": "1.40",
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        },
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "validator_errors": [
+        "capacity"
+      ],
+      "wall_seconds": 0.019348541987710632
+    },
+    {
+      "case": "enough_capacity",
+      "cost_usd": "1.40",
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        },
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "validator_errors": [],
+      "wall_seconds": 0.01809608300391119
+    },
+    {
+      "case": "region_split",
+      "cost_usd": "1.70",
+      "plan": [
+        {
+          "job_id": "flexible",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        }
+      ],
+      "validator_errors": [],
+      "wall_seconds": 0.017243916998268105
+    },
+    {
+      "case": "six_jobs_cost",
+      "cost_usd": "9.60",
+      "plan": [
+        {
+          "job_id": "flexible_short",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        },
+        {
+          "job_id": "pinned_a",
+          "offering_id": "A/east/small",
+          "cost_usd": "1.40"
+        },
+        {
+          "job_id": "pinned_a_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        },
+        {
+          "job_id": "pinned_b",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned_b_large",
+          "offering_id": "B/west/large",
+          "cost_usd": "3.20"
+        },
+        {
+          "job_id": "flexible_long",
+          "offering_id": "A/east/small",
+          "cost_usd": "2.10"
+        }
+      ],
+      "validator_errors": [
+        "capacity"
+      ],
+      "wall_seconds": 0.01837816700572148
+    },
+    {
+      "case": "seven_jobs_cpu_bottleneck",
+      "cost_usd": "10.80",
+      "plan": [
+        {
+          "job_id": "flexible_short",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        },
+        {
+          "job_id": "pinned_a",
+          "offering_id": "A/east/small",
+          "cost_usd": "1.40"
+        },
+        {
+          "job_id": "pinned_a_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        },
+        {
+          "job_id": "pinned_b",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned_b_large",
+          "offering_id": "B/west/large",
+          "cost_usd": "3.20"
+        },
+        {
+          "job_id": "flexible_long",
+          "offering_id": "A/east/small",
+          "cost_usd": "2.10"
+        },
+        {
+          "job_id": "flexible_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        }
+      ],
+      "validator_errors": [
+        "capacity"
+      ],
+      "wall_seconds": 0.017594542005099356
+    },
+    {
+      "case": "seven_jobs_extra_large_machine",
+      "cost_usd": "10.80",
+      "plan": [
+        {
+          "job_id": "flexible_short",
+          "offering_id": "A/east/small",
+          "cost_usd": "0.70"
+        },
+        {
+          "job_id": "pinned_a",
+          "offering_id": "A/east/small",
+          "cost_usd": "1.40"
+        },
+        {
+          "job_id": "pinned_a_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        },
+        {
+          "job_id": "pinned_b",
+          "offering_id": "B/west/small",
+          "cost_usd": "1.00"
+        },
+        {
+          "job_id": "pinned_b_large",
+          "offering_id": "B/west/large",
+          "cost_usd": "3.20"
+        },
+        {
+          "job_id": "flexible_long",
+          "offering_id": "A/east/small",
+          "cost_usd": "2.10"
+        },
+        {
+          "job_id": "flexible_large",
+          "offering_id": "A/east/large",
+          "cost_usd": "1.20"
+        }
+      ],
+      "validator_errors": [],
+      "wall_seconds": 0.016716332989744842
+    }
+  ],
+  "scope": "Original private ILP; real SkyPilot objects and synthetic CPU candidates",
+  "status": "passed"
+}

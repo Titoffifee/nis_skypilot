@@ -1,0 +1,16 @@
+{
+  "offerings": [
+    {"id": "A/east/small", "provider": "A", "region": "east", "instance_type": "small", "cpus": 4, "price_usd_h": "0.70", "capacity": 2},
+    {"id": "A/east/large", "provider": "A", "region": "east", "instance_type": "large", "cpus": 8, "price_usd_h": "1.20", "capacity": 1},
+    {"id": "B/west/small", "provider": "B", "region": "west", "instance_type": "small", "cpus": 4, "price_usd_h": "1.00", "capacity": 2},
+    {"id": "B/west/large", "provider": "B", "region": "west", "instance_type": "large", "cpus": 8, "price_usd_h": "1.60", "capacity": 1}
+  ],
+  "jobs": [
+    {"id": "flexible_short", "required_cpus": 4, "duration_h": "1", "deadline_h": "1", "allowed_locations": [["A", "east"], ["B", "west"]]},
+    {"id": "pinned_a", "required_cpus": 4, "duration_h": "2", "deadline_h": "2", "allowed_locations": [["A", "east"]]},
+    {"id": "pinned_a_large", "required_cpus": 8, "duration_h": "1", "deadline_h": "1", "allowed_locations": [["A", "east"]]},
+    {"id": "pinned_b", "required_cpus": 4, "duration_h": "1", "deadline_h": "1", "allowed_locations": [["B", "west"]]},
+    {"id": "pinned_b_large", "required_cpus": 8, "duration_h": "2", "deadline_h": "2", "allowed_locations": [["B", "west"]]},
+    {"id": "flexible_long", "required_cpus": 2, "duration_h": "3", "deadline_h": "3", "allowed_locations": [["A", "east"], ["B", "west"]]}
+  ]
+}
